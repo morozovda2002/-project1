@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дашборд вовлечённости в тренировки</title>
+  <link rel="stylesheet" href="style.css?v=workout-bubbles">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Онлайн-тренировки · аналитика программы</p>
+        <h1>Вовлечённость<br>в тренировки</h1>
+      </div>
+      <div class="filters">
+        <span>Активный срез</span>
+        <div id="chips" class="chips"><i>Все данные</i></div>
+        <button id="bubble-toggle" disabled>Кружки: выкл</button>
+        <button id="reset">Сбросить</button>
+      </div>
+    </header>
+
+    <section class="kpis">
+      <article><span>Просмотры</span><strong id="kpi-views">—</strong></article>
+      <article><span>Пользователи</span><strong id="kpi-users">—</strong></article>
+      <article><span>Средняя оценка</span><strong id="kpi-rating">—</strong></article>
+      <article><span>Кандидаты на перезапись</span><strong id="kpi-risk">—</strong></article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel main-panel">
+        <div class="panel-head">
+          <div><p>01 · Динамика</p><h2>Просмотры по неделям</h2></div>
+          <span>Нажмите на неделю или тип</span>
+        </div>
+        <div id="type-legend" class="type-legend"></div>
+        <svg id="main-chart"></svg>
+      </article>
+
+      <div class="side-column">
+        <article class="panel side-panel">
+          <div class="panel-head compact"><div><p>02 · Тренеры</p><h2>Рейтинг тренеров</h2></div></div>
+          <svg id="trainer-chart"></svg>
+        </article>
+        <article class="panel side-panel">
+          <div class="panel-head compact"><div><p>03 · Качество</p><h2>Качество тренировок</h2></div></div>
+          <svg id="quality-chart"></svg>
+        </article>
+        <article class="panel side-panel">
+          <div class="panel-head compact"><div><p>04 · Аудитория</p><h2>Что выбирают малоактивные</h2></div></div>
+          <svg id="preference-chart"></svg>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p><b>Связи:</b> выбор недели на основном графике пересчитывает тренеров и проблемные тренировки; выбор тренера фильтрует динамику; выбор типа работает на всех четырёх графиках.</p>
+      <p>Малоактивные — 26 пользователей, посмотревших не более 19 уникальных тренировок.</p>
+    </footer>
+  </main>
+  <div id="tooltip" class="tooltip"></div>
+  <script src="app.js?v=quality-plane"></script>
+</body>
+</html>
